@@ -31,7 +31,7 @@ async function caricaCache() {
   const [t1, t2] = await Promise.all([r1.text(), r2.text()]);
   
   const prezzi = {};
-  t1.split('\n').slice(1).forEach(r => {
+    t1.split('\n').slice(2).forEach(r => {
     const c = r.split(';');
     if (c.length < 3) return;
     const id = c[0].trim(), tipo = c[1].trim(), p = parseFloat(c[2].replace(',','.'));
@@ -42,7 +42,7 @@ async function caricaCache() {
   });
   
   const stazioni = [];
-  t2.split('\n').slice(1).forEach(r => {
+    t2.split('\n').slice(2).forEach(r => {
     const c = r.split(';');
     if (c.length < 10) return;
     const lat = parseFloat(c[8].replace(',','.')), lon = parseFloat(c[9].replace(',','.'));
