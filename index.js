@@ -58,7 +58,11 @@ console.log('Prima riga stazioni: ' + t2.split('\n')[0]);
 console.log('Seconda riga stazioni: ' + t2.split('\n')[1]);
   return stazioni;
 }
-
+app.get('/test', async (req, res) => {
+  const r = await fetch('https://www.mimit.gov.it/images/exportCSV/prezzo_alle_8.csv');
+  const t = await r.text();
+  res.send(t.split('\n').slice(0,5).join('\n'));
+});
 app.get('/vicini', async (req, res) => {
   try {
     const lat = parseFloat(req.query.lat);
