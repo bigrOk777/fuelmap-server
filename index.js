@@ -43,7 +43,7 @@ async function caricaCache() {
   
   const stazioni = [];
     t2.split('\n').slice(2).forEach(r => {
-    const c = r.split(';');
+      const c = r.split('|');
     if (c.length < 10) return;
     const lat = parseFloat(c[8].replace(',','.')), lon = parseFloat(c[9].replace(',','.'));
     if (isNaN(lat)||isNaN(lon)) return;
