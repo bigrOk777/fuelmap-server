@@ -53,7 +53,6 @@ async function caricaCache() {
   
   cache = stazioni;
   cacheTime = Date.now();
-  console.log('Cache pronta: ' + stazioni.length + ' stazioni');
 console.log('Prima riga prezzi: ' + t1.split('\n')[0]);
 console.log('Prima riga stazioni: ' + t2.split('\n')[0]);
 console.log('Seconda riga stazioni: ' + t2.split('\n')[1]);
