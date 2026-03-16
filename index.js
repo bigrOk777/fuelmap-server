@@ -32,7 +32,7 @@ async function caricaCache() {
   
   const prezzi = {};
     t1.split('\n').slice(2).forEach(r => {
-      const c = r.split(';');
+      const c = r.split('|');
     if (c.length < 3) return;
     const id = c[0].trim(), tipo = c[1].trim(), p = parseFloat(c[2].replace(',','.'));
     if (id && tipo && !isNaN(p)) {
